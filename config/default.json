@@ -2,7 +2,7 @@
     "server": {
         "scheme":"http",
         "host":"localhost",
-        "port": 9090,
+        "port": 9191,
         "context":"/images"
     },
     "db": {
