@@ -22,6 +22,7 @@ let user = 'muqsith';
 let upload = multer({ dest: path.resolve(config.get('destination'))})
     ;
 
+
 function getImageObject(_file) {
     let image = getNewImage();
     image.user = user;
@@ -114,6 +115,21 @@ router.get('/file/*', (req, res) => {
     }
 });
 
+// get images for user
+router.get('/delete', (req, res) => {
+    res.set('Content-Type', 'application/json');
+    let id = req.query['id'];
+    getImageById(id)
+    .then((image) => {
+        return deleteImages([image]);
+    })
+    .then((result) => {
+        res.send(result);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+});
 
 /*
 TODO: Below methods to be implemented further
@@ -148,6 +164,5 @@ router.post('/update', (req, res) => {
     })
 });
 */
-
 
 module.exports = router;

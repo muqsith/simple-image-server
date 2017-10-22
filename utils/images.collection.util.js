@@ -150,7 +150,7 @@ function onSave(images) {
         .then((metadata) => {
             image.height = metadata['ExifImageHeight'];
             image.width = metadata['ExifImageWidth'];
-            image.url = `${selfurl}/file/${image['_id']}/${thumbnail.width}x${thumbnail.height}`;
+            image.url = `${selfurl}/api/file/${image['_id']}`;
             return updateImage(image);
         })
         .then((update_result) => {

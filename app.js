@@ -23,8 +23,8 @@ init()
             next();
         });
         
-        app.use(express.static('public'));
-        app.use(server_config.context, imagesrouter);
+        app.use(server_config.context, express.static('public'));
+        app.use(`${server_config.context}/api`, imagesrouter);
         
         app.listen(server_config.port, () => {
             console.log(`App running => ${selfurl}`);

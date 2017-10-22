@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px;
+}
+
+.btn {
+    min-height: 30px;
+    min-width: 50px;
+    background-color: skyblue;
+    border: 1px solid skyblue;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+    outline:none;
+    cursor: pointer;
+}
+
+.btn:active {
+    background-color: #fff;
+    color: skyblue;
+    outline:none;
+}
+
+.btn-delete {
+    background-color: salmon;
+    border: 1px solid salmon;
+    color: #fff;
+}
+
+.btn-delete:active {
+    background-color: #fff;
+    color: salmon;
+    outline:none;
+}
+
+table {
+    border-collapse: collapse;
+}

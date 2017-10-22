@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Images - App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet"></head>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>This page is only to check if API is working.</h1>
+        <hr/>
+        <div id="upload" class="upload">
+            <label>Upload Files: </label>
+            <input id="filesinput" type="file" name="files" multiple />
+            <button onclick="uploadImages()" class="btn">Upload</button>
+            <h5>* Reload page after upload if you see if image width and height are zero.</h5>
+        </div>
+        <hr/>
+        <div id="result" class="upload">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Name</th>
+                        <th>MIME Type</th>
+                        <th>Size (Bytes)</th>
+                        <th>Height</th>
+                        <th>Width</th>
+                        <th>Link</th>
+                        <th>Thumbnail</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
