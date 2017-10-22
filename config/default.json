@@ -1,0 +1,21 @@
+{
+    "server": {
+        "scheme":"http",
+        "host":"localhost",
+        "port": 9090,
+        "context":"/images"
+    },
+    "db": {
+        "path": "mongodb://localhost:27017/images-meta",
+        "collection": "images"
+    },
+    "destination": "/tmp/simple-image-server",
+    "upload": {
+        "maxcount": 10,
+        "maxsize": "50M"
+    },
+    "thumbnail" : {
+        "height": 60,
+        "width": "AUTO"
+    }
+}
