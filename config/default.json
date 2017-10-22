@@ -3,7 +3,8 @@
         "scheme":"http",
         "host":"localhost",
         "port": 9191,
-        "context":"/images"
+        "context":"/images",
+        "production":"https://genusmuneris.org/images"
     },
     "db": {
         "path": "mongodb://localhost:27017/images-meta",
@@ -17,5 +18,6 @@
     "thumbnail" : {
         "height": 60,
         "width": "AUTO"
-    }
+    },
+    "production" : false
 }
