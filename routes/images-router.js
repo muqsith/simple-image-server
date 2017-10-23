@@ -17,7 +17,7 @@ const path = require('path'),
 ;
 
 // currently hard coded user, user should be extracted from request Authentication header (bearer).
-let user = 'muqsith';
+let user = 'sathish';
 
 let upload = multer({ dest: path.resolve(config.get('destination'))})
     ;
@@ -130,39 +130,5 @@ router.get('/delete', (req, res) => {
         res.send(err);
     })
 });
-
-/*
-TODO: Below methods to be implemented further
-
-// get cropped image
-router.get('/crop', (req, res) => {
-    let image = req.body['image'];
-    let crop = req.body['crop'];
-    getCroppedImage(image.path, crop)
-    .then((_buf) => {
-        res.set('Content-Type', image.mimetype);
-        res.send(_buf);
-    })
-    .catch((err) => {
-        res.set('Content-Type', 'application/json');
-        res.send(Object.assign({}, result.error, {message: JSON.stringify(err)}));
-    })
-});
-
-// save updated image
-
-router.post('/update', (req, res) => {
-    let image = req.body('image');
-    getFile(image.path)
-    .then((_buf) => {
-        res.set('Content-Type', image.mimetype);
-        res.send(_buf);
-    })
-    .catch((err) => {
-        res.set('Content-Type', 'application/json');
-        res.send(err);
-    })
-});
-*/
 
 module.exports = router;
