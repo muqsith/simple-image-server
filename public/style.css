@@ -40,3 +40,7 @@ body {
 table {
     border-collapse: collapse;
 }
+
+#inputcontainer {
+    display: inline-block;
+}

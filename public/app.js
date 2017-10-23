@@ -1,9 +1,11 @@
 function uploadImages() {
-    let _files = document.getElementById('filesinput').files;
+    let filesinput = document.getElementById('filesinput');
+    let _files = filesinput.files;
     var formData = new FormData();
     for (let i=0; i<_files.length; i+=1) {
         formData.append('images', _files[i]);
     }
+    filesinput
     $.ajax({
         type:'POST',
         url: 'api',
@@ -38,6 +40,8 @@ function deleteImage(id) {
 }
 
 function renderImages() {
+    $('#inputcontainer').empty();
+    $('#inputcontainer').append(`<input id="filesinput" type="file" name="files" multiple />`);
     $('#tbody').empty();
     $.ajax({
         url:'api',

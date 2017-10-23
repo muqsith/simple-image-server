@@ -5,16 +5,9 @@ const Promise = require("bluebird"),
     { getDBConnection } = require('./mongo.util'),
     LOG = require('./logger.util'),
     config = require('config'),
-    { getMetaData, getCroppedImage,
-        getResizedImage } = require('../utils/jimp.util'),
+    { getMetaData, getResizedImage } = require('../utils/sharp.util'),
     { initImagesFolder, 
         deleteFile, createFile } = require('../utils/image.files.util')
-    ;
-let server_config = config.get('server'),
-    selfurl = `${server_config.scheme}:`
-        +`//${server_config.host}:${server_config.port}`
-        +`${server_config.context}`,
-    thumbnail = config.get('thumbnail')
     ;
     
 
@@ -148,14 +141,9 @@ function onSave(images) {
     if (image) {
        getMetaData(image.path)
         .then((metadata) => {
-            image.height = metadata['ExifImageHeight'];
-            image.width = metadata['ExifImageWidth'];
-            if (config.get('production')) {
-                image.url = `${server_config.production}/api/file/${image['_id']}`;
-            } else {
-                image.url = `${selfurl}/api/file/${image['_id']}`;
-            }
-            
+            image.height = metadata.height;
+            image.width = metadata.width;
+            image.url = `${config.get('server').url}/api/file/${image['_id']}`;            
             return updateImage(image);
         })
         .then((update_result) => {

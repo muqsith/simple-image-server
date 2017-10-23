@@ -11,9 +11,6 @@ const express = require('express'),
 init()
     .then((result) => {
         let server_config = config.get('server');
-        let selfurl = `${server_config.scheme}:`
-                +`//${server_config.host}:${server_config.port}`
-                +`${server_config.context}`;
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
         app.use(function(req, res, next) {
@@ -27,7 +24,7 @@ init()
         app.use(`${server_config.context}/api`, imagesrouter);
         
         app.listen(server_config.port, () => {
-            console.log(`App running => ${selfurl}`);
+            console.log(`App running => http://localhost:${server_config.port}${server_config.context}`);
         });
     })
     .catch((err) => {

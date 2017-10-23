@@ -1,8 +1,8 @@
 {
     "server": {
         "port": 9191,
-        "context":"/images",
-        "url":"http://localhost:9191/images"
+        "context":"",
+        "url":"https://genusmuneris.org/images/"
     },
     "db": {
         "path": "mongodb://localhost:27017/images-meta",

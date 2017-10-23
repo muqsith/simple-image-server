@@ -11,7 +11,7 @@ const path = require('path'),
         updateImage,  
         deleteImages } = require('../utils/images.collection.util'),
     { getMetaData, getResizedImage,
-        getCroppedImage } = require('../utils/jimp.util'),
+        getCroppedImage } = require('../utils/sharp.util'),
     { getFile } = require('../utils/image.files.util'),
     { getSizeFromSizeString } = require('../utils/generic.util')
 ;
